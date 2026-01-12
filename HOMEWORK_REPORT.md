@@ -23,13 +23,20 @@ This report documents the steps taken to complete the PyTorch classification hom
 - Attempted `dvc init` (failed due to existing DVC setup)
 - Successfully configured DVC remotes:
   - Found existing Google Drive remote: `gdrive://0ABF-h_iJuV04Uk9PVA`
-- Attempted data pull: `dvc pull`
+- Attempted data pull: `dvc pull` succefull 
+
+![alt text](image-2.png)
 
 ### 4. MLflow Setup
 - Installed MLflow
 - Resolved Windows MIME type issues by tinkering with regedit
 - Successfully started MLflow UI
+4.1 MLflow runs: training the models was successfuk through mlflow as shows in this attachment: 
+![alt text](<Screenshot (1498).png>)
 
+also testing the runs was also successful: 
+![alt text](image-3.png) 
+![alt text](<Screenshot (1499).png>)
 ### 5. Code Analysis
 - Examined project structure and dependencies
 - Understood expected data structure:
@@ -43,27 +50,6 @@ This report documents the steps taken to complete the PyTorch classification hom
       └── forest/
   ```
 
-## Critical Issue Encountered
-
-### **FATAL ERROR: Missing Training Data**
-
-**Error Message:**
-```
-FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/train\\sea'
-```
-
-**Root Cause Analysis:**
-1. Original repository has DVC configured but data is not accessible
-2. Data directory remains empty despite configuration
-3. `dvc pull` returns "Everything is up to date" but data directory remains empty
-4. `dvc.lock` shows expected data: 2,367 files (15.4MB) vs actual: 0 files
-
-**Attempted Solutions:**
-- `dvc pull` and `dvc checkout` commands
-- Verified DVC cache and remote configuration  
-- Attempted to restore from `dvc.lock` hashes
-- All attempts failed - could not proceed further
-
 ## Screenshots
 
 ### Screenshot 1: Mlflow UI
@@ -73,15 +59,3 @@ FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data
 
 ### Screenshot 3: DVC Status and Remote Configuration
 ![alt text](<Screenshot (1437).png>)
-
-## Conclusion
-
-**Status: FATAL ERROR** - Unable to proceed with training due to missing dataset access.
-
-**Final Status:** Could not continue beyond this point. All troubleshooting attempts exhausted.
-
-**Time Invested:** ~2 hours on setup and troubleshooting
-**Completion:** Partial - stopped at data access issue
-
----
-*Report generated on: December 14, 2025*
