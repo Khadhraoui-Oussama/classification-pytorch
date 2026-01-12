@@ -10,7 +10,9 @@ This report documents the steps taken to complete the PyTorch classification hom
 - Forked the original repository: `https://github.com/besmaguesmi/classification-pytorch`
 - Cloned the forked repository to local machine
 - Set up Python virtual environment (`.venv`)
-
+-Created the google serviec account, the shared drive and added the email address as editor: 
+![alt text](<Screenshot (1430).png>) 
+![alt text](<Screenshot (1429).png>)
 ### 2. Dependencies Installation
 - Installed required packages:
   ```bash
@@ -20,13 +22,12 @@ This report documents the steps taken to complete the PyTorch classification hom
 
 ### 3. DVC Configuration Attempts
 - Encountered existing `.dvc` directory from original repository
-- Attempted `dvc init` (failed due to existing DVC setup)
+- Attempted `dvc init` (failed due to existing DVC setup) solved with --force
 - Successfully configured DVC remotes:
   - Found existing Google Drive remote: `gdrive://0ABF-h_iJuV04Uk9PVA`
 - Attempted data pull: `dvc pull` succefull 
 
-![alt text](image-2.png)
-
+![alt text](image-3.png)
 ### 4. MLflow Setup
 - Installed MLflow
 - Resolved Windows MIME type issues by tinkering with regedit
@@ -35,8 +36,8 @@ This report documents the steps taken to complete the PyTorch classification hom
 ![alt text](<Screenshot (1498).png>)
 
 also testing the runs was also successful: 
-![alt text](image-3.png) 
 ![alt text](<Screenshot (1499).png>)
+
 ### 5. Code Analysis
 - Examined project structure and dependencies
 - Understood expected data structure:
@@ -54,8 +55,6 @@ also testing the runs was also successful:
 
 ### Screenshot 1: Mlflow UI
 ![alt text](image-1.png)
-### Screenshot 2: Training Command Error
-![alt text](image.png)
 
-### Screenshot 3: DVC Status and Remote Configuration
+### Screenshot 2: DVC Status and Remote Configuration
 ![alt text](<Screenshot (1437).png>)
